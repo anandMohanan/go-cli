@@ -17,9 +17,9 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 	"os"
 
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 
 	homedir "github.com/mitchellh/go-homedir"
@@ -88,6 +88,6 @@ func initConfig() {
 
 func ErrorHandling(err error){
 	if(err != nil){
-		log.Fatal(err);
+		color.Red(err.Error())
 	}
 }

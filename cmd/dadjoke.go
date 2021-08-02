@@ -17,8 +17,10 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
+
 	"io/ioutil"
+
+	"github.com/fatih/color"
 
 	"net/http"
 
@@ -62,7 +64,7 @@ func getRandomJoke() {
 	err := json.Unmarshal(responseBytes, &joke)
 	ErrorHandling(err)
 
-	fmt.Println(joke.Joke)
+	color.Cyan(joke.Joke)
 
 }
 
